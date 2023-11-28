@@ -1,5 +1,6 @@
 import { RouteObject, createBrowserRouter } from 'react-router-dom'
 import NotFound from 'src/components/NotFound'
+import MainLayout from 'src/layouts/MainLayout'
 
 const routers: RouteObject[] = [
   {
@@ -19,7 +20,7 @@ const routers: RouteObject[] = [
   {
     path: '/',
     errorElement: <NotFound />,
-    // element: <AuthLayout />,
+    element: <MainLayout />,
     children: [
       {
         index: true,

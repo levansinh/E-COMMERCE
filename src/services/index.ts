@@ -28,9 +28,9 @@ class Service {
     })
   }
 
-  async get(url: string) {
+  async get(url: string, params?: object) {
     try {
-      const response = await this.instance.get(url)
+      const response = await this.instance.get(url, { params })
       return response.data
     } catch (error) {
       console.log(error)
