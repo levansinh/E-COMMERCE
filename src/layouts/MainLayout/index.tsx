@@ -7,12 +7,12 @@ import Footer from '../components/Footer'
 export default function MainLayout() {
   return (
     <div>
-        <TopHeader />
-        <Header/>
-       <div className="">
-        <Outlet/>
-       </div>
-        <Footer />
+      <TopHeader />
+      <Header />
+      <div className='px-[15px] md:px-[75px]'>
+        <Outlet />
+      </div>
+      <Footer />
     </div>
   )
 }

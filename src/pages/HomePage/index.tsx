@@ -1,4 +1,18 @@
+import Banner from 'src/components/Banner'
+import Brand from 'src/components/Brand'
+import ParamCategory from 'src/components/ParamCategory'
+import Police from 'src/components/Police'
+import Slider from 'src/components/SlideBanner'
+
 function HomePage() {
-  return <h2 className='font-bold text-primary underline'>Hello world!</h2>
+  return (
+    <div className=''>
+      <Slider />
+      <Police />
+      <ParamCategory />
+      <Banner />
+      <Brand />
+    </div>
+  )
 }
 export const Component = HomePage

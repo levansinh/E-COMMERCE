@@ -1,20 +1,16 @@
 import { Carousel } from 'flowbite-react'
+import banner1 from 'src/assets/images/banner1.jpg'
+import banner2 from 'src/assets/images/banner2.jpg'
 
 export default function Slider() {
   return (
-    <div className='h-56 sm:h-64 xl:h-80 2xl:h-96'>
-      <Carousel>
+    <div className='h-[300px] md:h-[480px] '>
+      <Carousel className='rounded-none -z-10'>
         <div className='flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white'>
-          Slide 1
+          <img src={banner1} alt='' />
         </div>
         <div className='flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white'>
-          Slide 2
-        </div>
-        <div className='flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white'>
-          Slide 3
-        </div>
-        <div className='flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white'>
-          Slide 3
+          <img src={banner2} alt='' />
         </div>
       </Carousel>
     </div>

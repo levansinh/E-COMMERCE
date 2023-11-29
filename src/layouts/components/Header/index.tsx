@@ -1,4 +1,3 @@
-import React from 'react'
 import { BsList } from 'react-icons/bs'
 
 import Navigate from '../Navigate'
@@ -8,7 +7,7 @@ import { useState } from 'react'
 import Search from '../Search'
 
 export default function Header() {
-  const [openModal, setOpenModal] = useState(true)
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <div className='w-full flex items-center justify-between px-[30px] md:px-[65px] h-[65px] '>
