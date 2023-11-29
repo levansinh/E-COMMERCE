@@ -1,19 +1,18 @@
-import { Label, TextInput, Checkbox, Button } from 'flowbite-react'
+import { Label, TextInput, Button } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 import { PATH_AUTH } from 'src/routes/path'
 import { useForm } from 'react-hook-form'
 
 import { SubmitForm, Props } from './types'
 
-
-export default function FormRegister({onMutate}: Props) {
+export default function FormRegister({ onMutate }: Props) {
   const {
     handleSubmit,
     register,
     formState: { errors }
   } = useForm<SubmitForm>()
 
-    const { email, password, lastName, firstName, mobile } = errors
+  const { email, password, lastName, firstName, mobile } = errors
 
   const onSubmit = (data: object) => {
     onMutate(data)
@@ -21,11 +20,11 @@ export default function FormRegister({onMutate}: Props) {
 
   return (
     <div className='w-[500px] mx-auto text-center my-8'>
-      <h1 className='text-3xl'>ĐĂNG NHẬP TÀI KHOẢN</h1>
+      <h1 className='text-3xl'>ĐĂNG KÝ TÀI KHOẢN</h1>
       <p className='text-sm my-3 flex items-center gap-x-1 justify-center'>
         Bạn đã có tài khoản ?
-        <Link to={PATH_AUTH.register} className='text-primary underline'>
-          Đăng ký tại đây.
+        <Link to={PATH_AUTH.login} className='text-primary underline'>
+          Đăng nhập tại đây.
         </Link>
       </p>
 
@@ -44,7 +43,7 @@ export default function FormRegister({onMutate}: Props) {
               {...register('firstName', { required: true })}
               required
             />
-           {firstName && <span>This field is required</span>}
+            {firstName && <span>This field is required</span>}
           </div>
           <div>
             <div className='mb-2 flex justify-start gap-x-1 items-center'>
@@ -58,7 +57,7 @@ export default function FormRegister({onMutate}: Props) {
               {...register('lastName', { required: true })}
               required
             />
-             {lastName && <span>This field is required</span>}
+            {lastName && <span>This field is required</span>}
           </div>
         </div>
         <div>
@@ -74,7 +73,7 @@ export default function FormRegister({onMutate}: Props) {
             className='outline-none'
             required
           />
-           {email && <span>This field is required</span>}
+          {email && <span>This field is required</span>}
         </div>
         <div>
           <div className='mb-2 flex justify-start gap-x-1 items-center'>
@@ -89,7 +88,7 @@ export default function FormRegister({onMutate}: Props) {
             className='outline-none'
             required
           />
-           {mobile && <span>This field is required</span>}
+          {mobile && <span>This field is required</span>}
         </div>
         <div>
           <div className='mb-2 flex justify-start gap-x-1 items-center'>
@@ -104,11 +103,7 @@ export default function FormRegister({onMutate}: Props) {
             className='outline-none'
             required
           />
-           {password && <span>This field is required</span>}
-        </div>
-        <div className='flex items-center gap-2 my-2'>
-          <Checkbox id='remember' />
-          <Label htmlFor='remember'>Remember me</Label>
+          {password && <span>This field is required</span>}
         </div>
         <Button type='submit' className='w-full bg-primary'>
           Đăng ký

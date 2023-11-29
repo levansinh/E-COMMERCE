@@ -13,7 +13,6 @@ const listNavigate = [
 export default function Navigate() {
   const { pathname } = useLocation()
   const activeNav = listNavigate.findIndex((item) => item.path === pathname)
-  console.log(activeNav)
   return (
     <div className='flex items-center justify-between gap-x-4'>
       {listNavigate.length !== 0 &&

@@ -3,11 +3,11 @@ import { FaSearch, FaRegUser, FaShoppingBag, FaRegHeart } from 'react-icons/fa'
 
 import DropdownLanguage from '../DropdownLanguage'
 interface Props {
-  openModal: boolean;
-  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  openModal: boolean
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Action({setOpenModal, openModal}: Props) {
+export default function Action({ setOpenModal, openModal }: Props) {
   return (
     <div className='flex align-center text-xl gap-x-4 '>
       <div className=''>
