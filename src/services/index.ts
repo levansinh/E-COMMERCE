@@ -1,11 +1,10 @@
 import axios from 'axios'
-import { BASE_URL } from 'src/configs'
 import { PATH_AUTH } from 'src/routes/path'
 class Service {
   instance
   constructor() {
     this.instance = axios.create({
-      baseURL: BASE_URL,
+      baseURL: import.meta.env.VITE_BASE_URL,
       timeout: 3 * 1000,
       headers: {
         'Content-Type': 'application/json'

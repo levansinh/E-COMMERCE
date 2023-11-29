@@ -6,6 +6,7 @@ const routers: RouteObject[] = [
   {
     path: '/auth',
     errorElement: <NotFound />,
+    element: <MainLayout />,
     children: [
       {
         path: 'login',
