@@ -7,7 +7,7 @@ import BreadCrumb from 'src/components/Breadcrumb'
 import { PATH_AUTH } from 'src/routes/path'
 import FormLogin from './FormLogin'
 
-const BreadCrumbData = [{ lable: 'Đăng nhập', path: PATH_AUTH.login }]
+const BreadCrumbData = [{ label: 'Đăng nhập', path: PATH_AUTH.login }]
 
 function SignInPage() {
   const navigate = useNavigate()

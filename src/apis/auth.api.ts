@@ -20,7 +20,6 @@ export const registerApi = async (data: object, navigate: NavigateFunction) => {
 export const loginApi = async (data: object, navigate: NavigateFunction, dispatch: AppDispatch) => {
   try {
     const response = await Services.post('/api/auth/login', data)
-    console.log(response)
     if (response.status === 'success') {
       dispatch(loginSuccess(response.dataUser))
       localStorage.setItem('accessToken', JSON.stringify(response.accessToken))

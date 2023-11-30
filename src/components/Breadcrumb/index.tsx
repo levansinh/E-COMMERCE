@@ -3,7 +3,7 @@ import { HiHome } from 'react-icons/hi'
 
 interface Props {
   data: {
-    lable: string
+    label: string
     path: string
   }[]
 }
@@ -18,7 +18,7 @@ export default function BreadCrumb({ data }: Props) {
       </Link>
       {data.map((item, index) => (
         <Link key={index} to={item.path}>
-          <div>/ {item.lable}</div>
+          <div>/ {item.label}</div>
         </Link>
       ))}
     </div>

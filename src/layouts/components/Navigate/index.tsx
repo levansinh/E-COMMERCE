@@ -14,7 +14,7 @@ export default function Navigate() {
   const { pathname } = useLocation()
   const activeNav = listNavigate.findIndex((item) => item.path === pathname)
   return (
-    <div className='flex items-center justify-between gap-x-4'>
+    <div className={`flex items-center justify-between gap-x-4 `}>
       {listNavigate.length !== 0 &&
         listNavigate.map((item, index) => (
           <Link

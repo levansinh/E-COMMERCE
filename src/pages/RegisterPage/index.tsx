@@ -5,11 +5,10 @@ import { useMutation } from '@tanstack/react-query'
 import { registerApi } from 'src/apis/auth.api'
 import { useNavigate } from 'react-router-dom'
 
-const BreadCrumbData = [{ lable: 'Đăng ký', path: PATH_AUTH.register }]
+const BreadCrumbData = [{ label: 'Đăng ký', path: PATH_AUTH.register }]
 
 function RegisterPage() {
   const navigate = useNavigate()
-  console.log(import.meta.env.VITE_BASE_URL)
   const { mutate } = useMutation({
     mutationFn: (data: object) => registerApi(data, navigate)
   })

@@ -19,7 +19,7 @@ export default function ParamCategory() {
   return (
     <div className='my-10'>
       <h2 className='text-center text-[32px] font-[600s]'>Thời trang EGA</h2>
-      <div className='grid grid-cols-6 mt-4'>
+      <div className='grid grid-cols-2 md:grid-cols-6 mt-4'>
         {dataCategory.map((item, index) => (
           <div className='flex items-center justify-center flex-col' key={index}>
             <div className='rounded-full overflow-hidden'>

@@ -26,6 +26,10 @@ const routers: RouteObject[] = [
       {
         index: true,
         lazy: () => import('src/pages/HomePage')
+      },
+      {
+        path: '/products',
+        lazy: () => import('src/pages/ProductPage')
       }
     ]
   }

@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { LoginSuccessAction } from 'src/common/auth'
+
 const initialState = {
   currentUser: {} || null,
   isLoggedIn: false
