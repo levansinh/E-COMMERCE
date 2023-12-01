@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -18,16 +18,31 @@ interface Props {
   isShowSidebar: boolean
   setIsShowSidebar: React.Dispatch<React.SetStateAction<boolean>>
 }
-export default function Sidebar({ isShowSidebar }: Props) {
+export default function Sidebar({ setIsShowSidebar }: Props) {
   const { pathname } = useLocation()
   const auth = useSelector((state: RootState) => state.auth)
   const { firstName, lastName } = auth.currentUser as CurrentUser
+
+  const sidebarRef = useRef<HTMLDivElement>(null)
   const activeNav = listNavigate.findIndex((item) => item.path === pathname)
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+        setIsShowSidebar(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [setIsShowSidebar])
+
   return (
-    <div
-      className={`fixed top-0 bottom-0 left-0 right-0 z-50 ${isShowSidebar ? 'translate-x-0' : '-translate-x-full'}`}
-    >
-      <div className='bg-white w-[300px] h-screen animate-slide-right'>
+    <div className={`fixed top-0 bottom-0 left-0 right-0 z-50 `}>
+      <div ref={sidebarRef} className='bg-white w-[300px] h-screen animate-slide-right'>
         <div className='bg-text text-white text-sm flex items-center h-[100px] px-[15px] gap-x-3 '>
           <div className='flex items-center gap-x-3'>
             <img src={avatar} className='w-[50px] h-[50px]' alt='' />
