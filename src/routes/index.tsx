@@ -30,6 +30,10 @@ const routers: RouteObject[] = [
       {
         path: '/products',
         lazy: () => import('src/pages/ProductPage')
+      },
+      {
+        path: '/products/:slug',
+        lazy: () => import('src/pages/ProductDetailPage')
       }
     ]
   }

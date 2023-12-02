@@ -1,3 +1,4 @@
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { Badge } from 'flowbite-react'
 import { FaSearch, FaRegUser, FaShoppingBag, FaRegHeart } from 'react-icons/fa'
@@ -8,12 +9,16 @@ import { RootState } from 'src/store/store'
 import Dropdown from '../Dropdown'
 import { PATH_AUTH, PATH_PRIVATE } from 'src/routes/path'
 import { CurrentUser } from 'src/common/auth'
+import SidebarCart from '../SidebarCart'
+import { useState } from 'react'
 interface Props {
   openModal: boolean
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function Action({ setOpenModal, openModal }: Props) {
+  const [sidebarCart, setSidebarCart] = useState(false)
+  console.log(sidebarCart)
   const auth = useSelector((state: RootState) => state.auth)
   const { firstName, lastName, _id } = auth.currentUser as CurrentUser
   const fullName = firstName + lastName
@@ -41,10 +46,13 @@ export default function Action({ setOpenModal, openModal }: Props) {
         </Badge>
       </div>
       <div className='relative cursor-pointer'>
-        <FaShoppingBag className='text-xl' />
+        <div className='' onClick={() => setSidebarCart(true)}>
+          <FaShoppingBag className='text-xl' />
+        </div>
         <Badge color='gray' size='xs' className='absolute -top-3 -right-2 bg-red-400 text-white rounded-full '>
           1
         </Badge>
+        {sidebarCart && <SidebarCart setSidebarCart={setSidebarCart} />}
       </div>
     </div>
   )

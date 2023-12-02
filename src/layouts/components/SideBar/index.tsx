@@ -9,7 +9,7 @@ import { CurrentUser } from 'src/common/auth'
 
 const listNavigate = [
   { lable: 'Trang chủ', path: PATH_PUBLIC.home },
-  { lable: 'Sản phẩm', path: PATH_PUBLIC.product },
+  { lable: 'Sản phẩm', path: PATH_PUBLIC.product.index },
   { lable: 'Tin tức', path: PATH_PUBLIC.blog },
   { lable: 'Giới thiệu', path: PATH_PUBLIC.introduce },
   { lable: 'Liên hệ', path: PATH_PUBLIC.contact }

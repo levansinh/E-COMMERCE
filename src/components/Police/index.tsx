@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaShippingFast, FaGift, FaMedal, FaHeadphones } from 'react-icons/fa'
 
 const dataPolices = [
@@ -14,7 +13,7 @@ export default function Police() {
       {dataPolices.map((item, index) => (
         <div className='flex items-center justify-center flex-col md:flex-row gap-y-2 gap-x-3' key={index}>
           <div className='text-3xl text-primary '>{item.icon}</div>
-          <div className='flex flex-col items-center'>
+          <div className='flex flex-col items-center md:items-start'>
             <h2 className='text-text text-base font-bold'>{item.title}</h2>
             <p className='text-[#666666] text-sm'>{item.subTitle}</p>
           </div>

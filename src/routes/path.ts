@@ -7,7 +7,10 @@ export const PATH_AUTH = {
 
 export const PATH_PUBLIC = {
   home: '/',
-  product: '/products',
+  product: {
+    index: '/products',
+    detail: (slug: string) => `/products/${slug}`
+  },
   blog: '/blog',
   introduce: '/introduce',
   contact: '/contact'
