@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 interface Props {
-  label: string
+  label: string;
 }
 
 export default function Checkbox({ label }: Props) {
@@ -10,5 +10,5 @@ export default function Checkbox({ label }: Props) {
       <input type='checkbox' className='w-5 h-5' />
       <span className='text-sm'>{label}</span>
     </div>
-  )
+  );
 }

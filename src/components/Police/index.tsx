@@ -1,11 +1,11 @@
-import { FaShippingFast, FaGift, FaMedal, FaHeadphones } from 'react-icons/fa'
+import { FaShippingFast, FaGift, FaMedal, FaHeadphones } from 'react-icons/fa';
 
 const dataPolices = [
   { icon: <FaShippingFast />, title: 'Miễn phí vận chuyển', subTitle: 'Nhận hàng trong vòng 3 ngày' },
   { icon: <FaGift />, title: 'Quà tặng hấp dẫn', subTitle: 'Nhiều ưu đãi khuyến mãi hot' },
   { icon: <FaMedal />, title: 'Bảo đảm chất lượng', subTitle: 'Sản phẩm đã được kiểm định' },
   { icon: <FaHeadphones />, title: 'Hotline: 19001993', subTitle: 'Dịch vụ hỗ trợ bạn 24/7' }
-]
+];
 
 export default function Police() {
   return (
@@ -20,5 +20,5 @@ export default function Police() {
         </div>
       ))}
     </div>
-  )
+  );
 }

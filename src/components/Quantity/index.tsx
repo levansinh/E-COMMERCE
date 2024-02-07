@@ -1,17 +1,17 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 interface Props {
-  flexCol?: boolean
+  flexCol?: boolean;
 }
 
 export default function Quantity({ flexCol }: Props) {
-  const [quantity, setQuantity] = useState<number>(1)
+  const [quantity, setQuantity] = useState<number>(1);
   const handleIncrement = () => {
-    setQuantity(quantity + 1)
-  }
+    setQuantity(quantity + 1);
+  };
   const handleDecrement = () => {
-    setQuantity(quantity - 1)
-  }
+    setQuantity(quantity - 1);
+  };
   return (
     <div>
       <form className='max-w-xs mx-auto'>
@@ -67,5 +67,5 @@ export default function Quantity({ flexCol }: Props) {
         </div>
       </form>
     </div>
-  )
+  );
 }

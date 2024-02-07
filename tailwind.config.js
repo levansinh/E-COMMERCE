@@ -1,12 +1,8 @@
+import { nextui } from '@nextui-org/react'
 import plugin from 'tailwindcss/plugin'
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
-    'node_modules/flowbite-react/lib/esm/**/*.js'
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -67,8 +63,9 @@ export default {
       }
     }
   },
+  darkMode: 'class',
   plugins: [
-    import('flowbite/plugin'),
+    nextui(),
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: { fontSize: theme('fontSize.2xl') },

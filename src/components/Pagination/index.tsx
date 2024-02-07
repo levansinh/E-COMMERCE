@@ -1,5 +1,1 @@
-import React from 'react'
-
-export default function Panigation() {
- 
-}
+export default function Panigation() {}

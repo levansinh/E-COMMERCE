@@ -1,16 +1,16 @@
-import { Button, Modal } from 'flowbite-react'
-import { HiOutlineExclamationCircle } from 'react-icons/hi'
+import { Button, Modal } from '@nextui-org/react';
+import { HiOutlineExclamationCircle } from 'react-icons/hi';
 interface Props {
-  content: string
-  openModal: boolean
-  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
-  onDelete: () => void
+  content: string;
+  openModal: boolean;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  onDelete: () => void;
 }
 function ModalDelete({ content, openModal, setOpenModal, onDelete }: Props) {
   const handleDelete = () => {
-    onDelete()
-    setOpenModal(false)
-  }
+    onDelete();
+    setOpenModal(false);
+  };
   return (
     <>
       <Modal show={openModal} size='md' onClose={() => setOpenModal(false)} popup>
@@ -33,7 +33,7 @@ function ModalDelete({ content, openModal, setOpenModal, onDelete }: Props) {
         </Modal.Body>
       </Modal>
     </>
-  )
+  );
 }
 
-export default ModalDelete
+export default ModalDelete;

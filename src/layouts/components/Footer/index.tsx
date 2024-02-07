@@ -1,38 +1,38 @@
-import { SiGooglemaps } from 'react-icons/si'
-import { IoLogoFacebook, IoLogoYoutube, IoLogoInstagram, IoLogoTwitter } from 'react-icons/io5'
-import { FaMobileAlt, FaCopyright, FaCcAmazonPay, FaCcPaypal, FaCcApplePay, FaGooglePay } from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
+import { SiGooglemaps } from 'react-icons/si';
+import { IoLogoFacebook, IoLogoYoutube, IoLogoInstagram, IoLogoTwitter } from 'react-icons/io5';
+import { FaMobileAlt, FaCopyright, FaCcAmazonPay, FaCcPaypal, FaCcApplePay, FaGooglePay } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
-import { logoWhiteColor } from 'src/assets/images'
-import { Link } from 'react-router-dom'
+import { logoWhiteColor } from '@/assets/images';
+import { Link } from 'react-router-dom';
 
 const policy = [
   { lable: 'Giới thiệu', path: '/' },
   { lable: 'Hệ thống cửa hàng', path: '/' },
   { lable: 'Câu hỏi thường gặp', path: '/' },
   { lable: 'Gọi điện đặt hàng', path: '/' }
-]
+];
 
 const support = [
   { lable: 'Liên hệ', path: '/' },
   { lable: 'Chính sách bán hàng', path: '/' },
   { lable: 'Chính sách giao hàng', path: '/' },
   { lable: 'Chính sách đổi trả', path: '/' }
-]
+];
 
 const social = [
   { icon: <IoLogoFacebook />, path: '/' },
   { icon: <IoLogoYoutube />, path: '/' },
   { icon: <IoLogoInstagram />, path: '/' },
   { icon: <IoLogoTwitter />, path: '/' }
-]
+];
 
 const payment = [
   { icon: <FaCcAmazonPay />, path: '/' },
   { icon: <FaCcPaypal />, path: '/' },
   { icon: <FaCcApplePay />, path: '/' },
   { icon: <FaGooglePay />, path: '/' }
-]
+];
 
 export default function Footer() {
   return (
@@ -102,5 +102,5 @@ export default function Footer() {
         </div>
       </div>
     </div>
-  )
+  );
 }

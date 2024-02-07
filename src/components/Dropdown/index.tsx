@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import { DropdownType } from './types'
+import { DropdownType } from './types';
 
 export default function Dropdown({ dropdownMenu, textButton }: DropdownType) {
   return (
@@ -91,5 +91,5 @@ export default function Dropdown({ dropdownMenu, textButton }: DropdownType) {
         </ul>
       </div>
     </div>
-  )
+  );
 }

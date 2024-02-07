@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface DataInput {
-  label?: string
-  path: string
-  onClick?: () => void
+  label?: string;
+  path: string;
+  onClick?: () => void;
 }
 interface Props {
-  text?: string
-  avatar?: string
-  size?: string
-  data?: DataInput[]
-  icon?: JSX.Element
+  text?: string;
+  avatar?: string;
+  size?: string;
+  data?: DataInput[];
+  icon?: JSX.Element;
 }
 export default function Dropdown({ text, avatar, size, data, icon }: Props) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   return (
     <div className='relative inline-block text-left'>
       <div className={`text-[${size}]`}>
@@ -58,5 +58,5 @@ export default function Dropdown({ text, avatar, size, data, icon }: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

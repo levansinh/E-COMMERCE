@@ -5,21 +5,22 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    'eslint-config-prettier', 'prettier'
+    'eslint-config-prettier', 
+    'prettier'
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs','vite.config.ts'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh','prettier'],
+  plugins: ['react-refresh', 'prettier'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
     'prettier/prettier': [
-      'warn',
+      'error',
       {
         arrowParens: 'always',
-        semi: false,
+        semi: true,
         trailingComma: 'none',
         tabWidth: 2,
         endOfLine: 'auto',
@@ -29,6 +30,5 @@ module.exports = {
         jsxSingleQuote: true
       }
     ]
-
   },
 }

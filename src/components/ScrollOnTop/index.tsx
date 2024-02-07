@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import { GrLinkTop } from 'react-icons/gr'
+import { useState } from 'react';
+import { GrLinkTop } from 'react-icons/gr';
 export default function ScrollOnTop() {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(true);
 
   const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop
+    const scrolled = document.documentElement.scrollTop;
     if (scrolled > 300) {
-      setVisible(true)
+      setVisible(true);
     } else if (scrolled <= 300) {
-      setVisible(false)
+      setVisible(false);
     }
-  }
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -18,13 +18,13 @@ export default function ScrollOnTop() {
       behavior: 'smooth'
       /* you can also use 'auto' behaviour 
          in place of 'smooth' */
-    })
-  }
+    });
+  };
 
-  window.addEventListener('scroll', toggleVisible)
+  window.addEventListener('scroll', toggleVisible);
   return (
     <button className={visible ? 'block' : 'hidden'} onClick={scrollToTop}>
       <GrLinkTop />
     </button>
-  )
+  );
 }

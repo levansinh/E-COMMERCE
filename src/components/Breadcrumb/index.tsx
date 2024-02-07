@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
-import { HiHome } from 'react-icons/hi'
+import { Link } from 'react-router-dom';
+import { HiHome } from 'react-icons/hi';
 
 interface Props {
   data: {
-    label: string
-    path: string
-  }[]
+    label: string;
+    path: string;
+  }[];
 }
 export default function BreadCrumb({ data }: Props) {
   return (
@@ -22,5 +22,5 @@ export default function BreadCrumb({ data }: Props) {
         </Link>
       ))}
     </div>
-  )
+  );
 }

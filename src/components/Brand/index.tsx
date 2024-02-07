@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function Brand() {
   return (
@@ -6,5 +6,5 @@ export default function Brand() {
       <h1 className='text-center font-[500] text-[32px]'>Thương hiệu nổi bật</h1>
       <div className=''></div>
     </div>
-  )
+  );
 }

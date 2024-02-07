@@ -1,10 +1,10 @@
-import React from 'react'
-import clothes1 from 'src/assets/images/clothes/aokhoac.png'
-import clothes2 from 'src/assets/images/clothes/aosomi.png'
-import clothes3 from 'src/assets/images/clothes/aothun.png'
-import clothes4 from 'src/assets/images/clothes/quandai.png'
-import clothes5 from 'src/assets/images/clothes/quanjean.png'
-import clothes6 from 'src/assets/images/clothes/quanshort.png'
+import React from 'react';
+import clothes1 from '@/assets/images/clothes/aokhoac.png';
+import clothes2 from '@/assets/images/clothes/aosomi.png';
+import clothes3 from '@/assets/images/clothes/aothun.png';
+import clothes4 from '@/assets/images/clothes/quandai.png';
+import clothes5 from '@/assets/images/clothes/quanjean.png';
+import clothes6 from '@/assets/images/clothes/quanshort.png';
 
 const dataCategory = [
   { image: clothes1, title: 'Áo khoác', subTitle: '8 sản phẩm' },
@@ -13,7 +13,7 @@ const dataCategory = [
   { image: clothes4, title: 'Quần dài', subTitle: '8 sản phẩm' },
   { image: clothes5, title: 'Quần jean', subTitle: '8 sản phẩm' },
   { image: clothes6, title: 'Quần short', subTitle: '8 sản phẩm' }
-]
+];
 
 export default function ParamCategory() {
   return (
@@ -31,5 +31,5 @@ export default function ParamCategory() {
         ))}
       </div>
     </div>
-  )
+  );
 }

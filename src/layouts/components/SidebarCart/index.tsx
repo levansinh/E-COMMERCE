@@ -1,28 +1,28 @@
-import React, { useEffect, useRef } from 'react'
-import { FaArrowRight, FaShoppingBag } from 'react-icons/fa'
-import { HiMiniXMark } from 'react-icons/hi2'
-import banner1 from 'src/assets/images/clothes/aokhoac.png'
-import Quantity from 'src/components/Quantity'
+import React, { useEffect, useRef } from 'react';
+import { FaArrowRight, FaShoppingBag } from 'react-icons/fa';
+import { HiMiniXMark } from 'react-icons/hi2';
+import banner1 from '@/assets/images/clothes/aokhoac.png';
+import Quantity from '@/components/Quantity';
 
 interface Props {
-  setSidebarCart: React.Dispatch<React.SetStateAction<boolean>>
+  setSidebarCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function SidebarCart({ setSidebarCart }: Props) {
-  const sidebarCartRef = useRef<HTMLDivElement>(null)
+  const sidebarCartRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (sidebarCartRef.current && !sidebarCartRef.current.contains(event.target as Node)) {
-        setSidebarCart(false)
+        setSidebarCart(false);
       }
-    }
+    };
 
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [setSidebarCart])
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [setSidebarCart]);
   return (
     <div className='fixed top-0 left-0 right-0 bottom-0 z-50  '>
       <div ref={sidebarCartRef} className='absolute bg-white w-[340px] h-screen right-0 flex flex-col justify-between'>
@@ -68,5 +68,5 @@ export default function SidebarCart({ setSidebarCart }: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

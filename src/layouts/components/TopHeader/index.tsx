@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { FaXmark } from 'react-icons/fa6'
+import React, { useState } from 'react';
+import { FaXmark } from 'react-icons/fa6';
 
 export default function TopHeader() {
-  const [isOpen, setIsOpen] = useState<boolean>(true)
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   const handleClose = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
   return (
     <div
       className={`${isOpen ? 'flex items-center justify-center h-[40px]' : 'hidden'} w-full bg-primary text-white  `}
@@ -15,5 +15,5 @@ export default function TopHeader() {
         <FaXmark />
       </div>
     </div>
-  )
+  );
 }

@@ -1,15 +1,15 @@
-import { BsList } from 'react-icons/bs'
+import { BsList } from 'react-icons/bs';
 
-import Navigate from '../Navigate'
-import Action from '../Action'
-import { logoPrimaryColor } from 'src/assets/images'
-import { useState } from 'react'
-import Sidebar from '../SideBar'
-import ModalHeader from '../ModalHeader'
+import Navigate from '../Navigate';
+import Action from '../Action';
+import { logoPrimaryColor } from '@/assets/images';
+import { useState } from 'react';
+import Sidebar from '../SideBar';
+import ModalHeader from '../ModalHeader';
 
 export default function Header() {
-  const [openModal, setOpenModal] = useState(false)
-  const [isShowSidebar, setIsShowSidebar] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
+  const [isShowSidebar, setIsShowSidebar] = useState(false);
   return (
     <div className='w-full flex items-center justify-between px-[20px] md:px-[65px] h-[65px] '>
       <div
@@ -30,5 +30,5 @@ export default function Header() {
       {isShowSidebar && <Sidebar isShowSidebar={isShowSidebar} setIsShowSidebar={setIsShowSidebar} />}
       {openModal && <ModalHeader openModal={openModal} setOpenModal={setOpenModal} />}
     </div>
-  )
+  );
 }

@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import { CiHeart } from 'react-icons/ci'
-import { FaHeart } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { CiHeart } from 'react-icons/ci';
+import { FaHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-import { PATH_PUBLIC } from 'src/routes/path'
+import { PUBLIC_URL } from '@/routes/urls';
 
 export default function ProductItem() {
-  const [isHeart, setIsHeart] = useState(false)
+  const [isHeart, setIsHeart] = useState(false);
   return (
     <div>
       <div className=''>
-        <Link to={PATH_PUBLIC.product.detail('123')}>
+        <Link to={PUBLIC_URL.product.detail('123')}>
           <img
             src='https://product.hstatic.net/200000696635/product/frame_2_2cd3c91f91254241bdaa5f2a464c8ffd_medium.png'
             className='w-full'
@@ -39,5 +39,5 @@ export default function ProductItem() {
         </div>
       </div>
     </div>
-  )
+  );
 }

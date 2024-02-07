@@ -1,18 +1,18 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
 
-import { PATH_PUBLIC } from 'src/routes/path'
+import { PUBLIC_URL } from '@/routes/urls';
 
 const listNavigate = [
-  { lable: 'Trang chủ', path: PATH_PUBLIC.home },
-  { lable: 'Sản phẩm', path: PATH_PUBLIC.product.index },
-  { lable: 'Tin tức', path: PATH_PUBLIC.blog },
-  { lable: 'Giới thiệu', path: PATH_PUBLIC.introduce },
-  { lable: 'Liên hệ', path: PATH_PUBLIC.contact }
-]
+  { lable: 'Trang chủ', path: PUBLIC_URL.home },
+  { lable: 'Sản phẩm', path: PUBLIC_URL.product.index },
+  { lable: 'Tin tức', path: PUBLIC_URL.blog },
+  { lable: 'Giới thiệu', path: PUBLIC_URL.introduce },
+  { lable: 'Liên hệ', path: PUBLIC_URL.contact }
+];
 
 export default function Navigate() {
-  const { pathname } = useLocation()
-  const activeNav = listNavigate.findIndex((item) => item.path === pathname)
+  const { pathname } = useLocation();
+  const activeNav = listNavigate.findIndex((item) => item.path === pathname);
   return (
     <div className={`flex items-center justify-between gap-x-4 `}>
       {listNavigate.length !== 0 &&
@@ -26,5 +26,5 @@ export default function Navigate() {
           </Link>
         ))}
     </div>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Quantity from 'src/components/Quantity'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Quantity from '@/components/Quantity';
 
 export default function ProductForm() {
   return (
@@ -66,5 +66,5 @@ export default function ProductForm() {
         Gọi đặt mua 1800.0000 ( 7:30 - 22:00 )
       </div>
     </div>
-  )
+  );
 }

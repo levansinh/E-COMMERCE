@@ -1,4 +1,4 @@
-import { IoIosSearch } from 'react-icons/io'
+import { IoIosSearch } from 'react-icons/io';
 
 export default function Search() {
   return (
@@ -19,5 +19,5 @@ export default function Search() {
         <span className='text-[12px] text-[#666666] cursor-pointer hover:border-b'>Quần</span>
       </div>
     </div>
-  )
+  );
 }

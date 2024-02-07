@@ -1,4 +1,4 @@
-import Checkbox from '../Checkbox'
+import Checkbox from '../Checkbox';
 
 export default function Filter() {
   return (
@@ -23,5 +23,5 @@ export default function Filter() {
         </div>
       </div>
     </div>
-  )
+  );
 }

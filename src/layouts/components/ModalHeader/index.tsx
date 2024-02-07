@@ -1,28 +1,28 @@
-import React, { useEffect, useRef } from 'react'
-import Action from '../Action'
-import Search from '../Search'
-import { logoPrimaryColor } from 'src/assets/images'
+import React, { useEffect, useRef } from 'react';
+import Action from '../Action';
+import Search from '../Search';
+import { logoPrimaryColor } from '@/assets/images';
 
 interface Props {
-  openModal: boolean
-  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
+  openModal: boolean;
+  setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function ModalHeader({ setOpenModal, openModal }: Props) {
-  const modalHeaderRef = useRef<HTMLDivElement>(null)
+  const modalHeaderRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalHeaderRef.current && !modalHeaderRef.current.contains(event.target as Node)) {
-        setOpenModal(false)
+        setOpenModal(false);
       }
-    }
+    };
 
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [setOpenModal])
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [setOpenModal]);
   return (
     <>
       <div className='overflow-x-hidden w-full overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
@@ -43,5 +43,5 @@ export default function ModalHeader({ setOpenModal, openModal }: Props) {
       </div>
       <div className='opacity-25 fixed inset-0 z-40 bg-black'></div>
     </>
-  )
+  );
 }
