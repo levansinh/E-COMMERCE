@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
-import { AUTH_URL, PUBLIC_URL } from '@/routes/urls';
+import { AUTH_URL, PUBLIC_URL } from '@/constants/routerUrl';
 import avatar from '@/assets/images/avatar.png';
-import { RootState } from '@/store/store';
 import { CurrentUser } from '@/types/auth';
 
 const listNavigate = [
@@ -20,7 +18,6 @@ interface Props {
 }
 export default function Sidebar({ setIsShowSidebar }: Props) {
   const { pathname } = useLocation();
-  const auth = useSelector((state: RootState) => state.auth);
   const { firstName, lastName } = auth.currentUser as CurrentUser;
 
   const sidebarRef = useRef<HTMLDivElement>(null);

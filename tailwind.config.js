@@ -1,5 +1,5 @@
-import { nextui } from '@nextui-org/react'
-import plugin from 'tailwindcss/plugin'
+import { nextui } from '@nextui-org/react';
+import plugin from 'tailwindcss/plugin';
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'],
@@ -71,7 +71,7 @@ export default {
         h1: { fontSize: theme('fontSize.2xl') },
         h2: { fontSize: theme('fontSize.xl') },
         h3: { fontSize: theme('fontSize.lg') }
-      })
+      });
     })
   ]
-}
+};

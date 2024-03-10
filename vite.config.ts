@@ -1,20 +1,38 @@
-import { defineConfig } from 'vite'
-import { visualizer } from "rollup-plugin-visualizer";
-import react from '@vitejs/plugin-react-swc'
-import path from 'path'
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable @typescript-eslint/naming-convention */
+/// <reference types="vite/client" />
+
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import * as path from 'path';
+
+const __dirname = path.resolve();
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), visualizer()],
-  server: {
-    port: 3000
-  },
-  css: {
-    devSourcemap: true
-  },
+  plugins: [react(), splitVendorChunkPlugin()],
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
+    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }]
+  },
+  envPrefix: 'VERCEL',
+  server: {
+    host: true,
+    watch: {
+      usePolling: true
+    }
+  },
+  optimizeDeps: {
+    exclude: ['firebase_firestore.js']
+  },
+  build: {
+    chunkSizeWarningLimit: 1600,
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+          return;
+        }
+        warn(warning);
+      }
     }
   }
-})
+});

@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 
-import { PUBLIC_URL } from '@/routes/urls';
+import { PUBLIC_URL } from '@/constants/routerUrl';
 
 const listNavigate = [
   { lable: 'Trang chủ', path: PUBLIC_URL.home },

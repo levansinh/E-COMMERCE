@@ -1,5 +1,5 @@
-import BreadCrumb from '@/components/Breadcrumb';
-import { AUTH_URL } from '@/routes/urls';
+import BreadCrumb from '@/components/Breadcrumb/Breadcrumb';
+import { AUTH_URL } from '@/constants/routerUrl';
 import FormRegister from './FormRegister';
 import { useMutation } from '@tanstack/react-query';
 import { registerApi } from '@/apis/auth.api';

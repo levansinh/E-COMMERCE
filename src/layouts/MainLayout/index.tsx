@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import TopHeader from '../components/TopHeader';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
-export default function MainLayout() {
+interface IMainLayout {
+  children: JSX.Element;
+}
+
+export default function MainLayout({ children }: IMainLayout) {
   const accessToken = localStorage.getItem('accessToken');
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -22,9 +26,7 @@ export default function MainLayout() {
     <div>
       <TopHeader />
       <Header />
-      <div className='px-[15px] md:px-[75px]'>
-        <Outlet />
-      </div>
+      <div className='px-[15px] md:px-[75px]'>{children}</div>
       <Footer />
     </div>
   );

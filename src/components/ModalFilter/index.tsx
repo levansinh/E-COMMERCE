@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import Filter from '../Filter';
+import Filter from '../../features/ProductPage/components/Filter/Filter';
 import { FaArrowLeft } from 'react-icons/fa';
 
 interface Props {
