@@ -1,5 +1,6 @@
-export interface DataAuth {
-  email: string;
-  password: string;
-  mobile: string;
-}
+import { SuccessResponse } from './common';
+export type AuthResponse = SuccessResponse<{
+  access_token: string;
+  expires: string;
+  user: User;
+}>;

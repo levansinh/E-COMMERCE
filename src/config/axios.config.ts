@@ -1,65 +1,59 @@
-import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import axios, { AxiosError, AxiosInstance } from 'axios';
 import APP_ENV from '@/config/appEnv.config';
+import { toast } from 'react-toastify';
+import { AuthResponse } from '@/types/auth';
+import { clearAccessTokenFromLS, saveAccessTokenToLS } from '@/utils/auth.utils';
 
-console.log(import.meta.env);
-
-const http = axios.create({
-  baseURL: APP_ENV.baseApiUrl,
-  headers: {
-    'Content-Type': 'application/json'
-  }
-});
-
-http.interceptors.request.use(
-  (config: InternalAxiosRequestConfig) => {
-    const newConfig = config;
-
-    const token = localStorage.getItem('auth_token');
-    console.log(token);
-
-    if (token) {
-      newConfig.headers.Authorization = `Bearer ${token}`;
-    }
-
-    // if (newConfig.data) {
-    //   newConfig.data = JSON.stringify(snakecaseKeys(config.data));
-    // }
-
-    return newConfig;
-  },
-  (error) => {
-    console.log('HTTP-REQUEST-ERROR:', error);
-    Promise.reject(error);
-  }
-);
-
-http.interceptors.response.use(
-  (response: AxiosResponse) => {
-    const newResponse = response;
-
-    if (newResponse && newResponse.data) {
-      const responseData = newResponse.data;
-      // responseData = camelcaseKeys(newResponse, {
-      //   deep: true
-      // });
-
-      if (responseData?.data?.data.authToken) {
-        localStorage.setItem('auth_token', responseData?.data?.data.authToken);
+class Http {
+  instance: AxiosInstance;
+  private accessToken: string;
+  constructor() {
+    this.accessToken = '';
+    this.instance = axios.create({
+      timeout: 10000,
+      baseURL: APP_ENV.baseApiUrl,
+      headers: {
+        'Content-Type': 'application/json'
       }
+    });
 
-      if (responseData?.data.status === 401) {
-        localStorage.setItem('auth_token', '');
+    this.instance.interceptors.request.use(
+      (config) => {
+        if (this.accessToken && config.headers) {
+          config.headers.Authorization = 'Bearer' + this.accessToken;
+          return config;
+        }
+        return config;
+      },
+      (error) => {
+        return Promise.reject(error);
       }
+    );
 
-      return responseData;
-    }
+    this.instance.interceptors.response.use(
+      (response) => {
+        const { url } = response.config;
+        if (url === '/login' || url === '/register') {
+          this.accessToken = (response.data as AuthResponse).data.access_token;
+          saveAccessTokenToLS(this.accessToken);
+        } else if (url === '/logout') {
+          this.accessToken = '';
+          clearAccessTokenFromLS();
+        }
+        return response;
+      },
 
-    return newResponse.data;
-  },
-  (error) => {
-    console.log('HTTP-RESPONSE-ERROR:', error);
-    Promise.reject(error);
+      function (error: AxiosError) {
+        if (error.response?.status !== HTTP_STATUS_CODE.UnprocessableEntity) {
+          const data: any | undefined = error.response?.data;
+          const message = data.message || error.message;
+          toast.error(message);
+        }
+      }
+    );
   }
-);
+}
+
+const http = new Http().instance;
 
 export default http;

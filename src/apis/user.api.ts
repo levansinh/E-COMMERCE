@@ -1,16 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 
 import http from '@/config/axios.config';
-import { IGenericResponse } from '@/types/common';
+import { SuccessResponse } from '@/types/common';
 import { IUser } from '@/types/user';
 
-interface IFetchUserResponse extends IGenericResponse {
-  data: IUser;
-}
+export type UserResponse = SuccessResponse<{
+  user: IUser;
+}>;
 
 const fetchUserApi = async () => {
-  const res = await http.get<IFetchUserResponse>('api/user/current');
-  return res.data;
+  const res = await http.get<UserResponse>('user/current');
+  return res;
 };
 
 export const useFetchUser = () => {

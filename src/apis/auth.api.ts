@@ -6,7 +6,7 @@ import { IUser } from '@/types/user';
 // login
 
 const loginMutation = async (data: Pick<IUser, 'email' | 'password'>) => {
-  const res = await http.post('api/auth/login', data);
+  const res = await http.post('user/login', data);
   return res.data;
 };
 
@@ -16,7 +16,7 @@ export const useLoginMutation = () => {
   });
 };
 
-// register
+// // register
 const registerMutation = async (data: Pick<IUser, 'email' | 'password' | 'mobile'>) => {
   const res = await http.post('api/auth/register', data);
   return res.data;

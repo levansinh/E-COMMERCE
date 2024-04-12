@@ -10,10 +10,6 @@ import { privateRoutes } from '@/routes/private';
 const InternalServerError = lazy(() => import('@/pages/ServerError'));
 const PageNotFound = lazy(() => import('@/pages/Notfound'));
 
-/**
- * Define public router
- */
-
 function PublicOutletRouter() {
   return <Outlet />;
 }
@@ -48,7 +44,9 @@ function AppRouter() {
           <Route element={<PublicOutletRouter />}>{renderRoutes(publicRoutes)}</Route>
 
           {/* Private Routes */}
-          <Route element={<ProtectedRouter isAuth={!!authUser?.email} />}>{renderRoutes(privateRoutes)}</Route>
+          <Route element={<ProtectedRouter isAuth={!!authUser?.data.user.email} />}>
+            {renderRoutes(privateRoutes)}
+          </Route>
 
           <Route
             path='/internal-server-error'
